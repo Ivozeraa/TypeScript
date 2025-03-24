@@ -1,55 +1,15 @@
-import { Personagem } from "./Classes/Personagem";
-import promptSync from "prompt-sync";
+import { Produto } from "./ProjetoCalcularPreço/Produto";
+import { ProdutoPeressivel } from "./ProjetoCalcularPreço/ProdutoPeressivel";
 
-const prompt = promptSync({ sigint: true });
-let Person: Personagem = new Personagem("Sansão", 100, 10, 50, 30);
+const Feijao: Produto = new Produto("Feijão", 10, 5);
+const leite = new ProdutoPeressivel("Leite", 5, 10, "2025-03-28");
 
-let option: number = 0;
-while (option !== 6 || Person.isDead()) {
-  console.clear();
-  console.log("=======================================");
-  console.log("         🏹 RPG - TREINAMENTO 🛡️       ");
-  console.log("=======================================\n");
-  console.log(" [1] ⚔️ Treinar Ataque");
-  console.log(" [2] 🛡️ Treinar Defesa");
-  console.log(" [3] 🛏️ Dormir e Recuperar Energia");
-  console.log(" [4] 📜 Exibir Status");
-  console.log(" [5] ✨ Alterar nome");
-  console.log(" [6] ❌ Sair\n");
-  console.log("=======================================");
+console.log("Nome do produto: ", Feijao.nomeProduto); 
+console.log("Valor Unitário: R$", Feijao.valorUnidade);
+console.log("Quantidade Comprada: ", Feijao.quantidadeProduto);
 
-  option = Number(prompt("🔹 Escolha uma opção: "));
+console.log("Preço total com 5 unidades: ", Feijao.calcularPreço(5));
+console.log("Quantidade Comprada (depois de calcular): ", Feijao.quantidadeProduto);
 
-  switch (option) {
-    case 1:
-      console.log(Person.treinarAtaque());
-      break;
-    case 2:
-      console.log(Person.treinarDefesa());
-      break;
-    case 3:
-      let horas: number = +prompt("Digite o número de horas: ");
-      console.log(Person.dormir(horas));
-      break;
-    case 4:
-      console.log(Person.status());
-      break;
-    case 5:
-      let nome: string = prompt("Dê um nome ao personagem: ");
-      Person.nome = nome;
-      console.log(`\n✨ Nome do personagem atualizado para: ${Person.nome}`);
-      break;
-    case 6:
-      console.log("\n👋 Até logo, guerreiro!");
-      break;
-    default:
-      console.log("\n⚠️ Escolha uma opção válida!");
-      break;
-  }
-
-  prompt("\n🔄 Pressione ENTER para continuar...");
-}
-
-if (Person.isDead()) {
-  console.log("\n💀 O jogo acabou, seu personagem morreu.");
-}
+console.log("-----------------------------------")
+console.log(leite.calcularPreço());
