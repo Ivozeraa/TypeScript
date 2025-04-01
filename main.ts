@@ -1,6 +1,6 @@
-import { Produto } from "./Poo - Walter/ProjetoCalcularPreço/Produto";
-import { ProdutoPeressivel } from "./Poo - Walter/ProjetoCalcularPreço/ProdutoPeressivel";
-import { ProdutoNaoPerissivel } from "./Poo - Walter/ProjetoCalcularPreço/ProdutoNaoPeressivel";
+import { Produto } from "./Poo - Walter/Gerencimento de Produtos/ProjetoCalcularPreço/Produto";
+import { ProdutoPeressivel } from "./Poo - Walter/Gerencimento de Produtos/ProjetoCalcularPreço/ProdutoPeressivel";
+import { ProdutoNaoPerissivel } from "./Poo - Walter/Gerencimento de Produtos/ProjetoCalcularPreço/ProdutoNaoPeressivel";
 
 const feijao: Produto = new Produto("Feijão", 10, 5);
 const leite = new ProdutoPeressivel("Leite", 5, 10, "2025-03-28");
